@@ -22,8 +22,13 @@ def convert_ale_encoding(input_file_path):
 
         print(f"文件已成功从 UTF-8 编码转换为 GBK 编码并保存到 {output_file_path}")
 
-        # 在 Finder 中显示输出的 ALE 文件
-        os.system(f'open -R "{output_file_path}"')
+        # 在不同操作系统中显示输出的 ALE 文件
+        if os.name == 'posix':
+            os.system(f'open -R "{output_file_path}"')  # macOS
+        elif os.name == 'nt':
+            os.system(f'explorer /select,"{output_file_path}"')  # Windows
+        else:
+            print("自动打开文件夹功能在此操作系统上不可用。")
 
     except FileNotFoundError:
         print(f"文件未找到：{input_file_path}")
@@ -33,14 +38,9 @@ def convert_ale_encoding(input_file_path):
 if __name__ == "__main__":
     # 设置 argparse 参数解析
     parser = argparse.ArgumentParser(description='将 UTF-8 编码的 ALE 文件转换为 GBK 编码')
-    parser.add_argument('input_file', type=str, nargs='?', help='输入 ALE 文件路径')
+    parser.add_argument('input_file', type=str, help='输入 ALE 文件路径')
     args = parser.parse_args()
 
-    # 如果没有通过命令行传递参数，则使用默认的文件路径
-    if args.input_file:
-        input_ale_file = os.path.abspath(args.input_file)
-    else:
-        input_ale_file = "/path/to/default/input_file.ale"  # 默认输入文件路径，请根据需要修改
-
-    # 执行转换
+    # 获取绝对路径并执行转换
+    input_ale_file = os.path.abspath(args.input_file)
     convert_ale_encoding(input_ale_file)
