@@ -7,12 +7,5 @@
 
 
 ## 如何使用
-#### 方法一
-```console
-python ALE2GBK-Converter.py /path/to/your/input_file.ale
-```
 
-#### 方法二
-#### [懒人快捷指令](https://www.icloud.com/shortcuts/58f813f9781b4d9198b4655c2dc6633d)
-###### `👆点我需要MacOS 12 Monterey +`
-###### `第一次使用需要联网安装相应的依赖和脚本文件，可能会比较慢请耐心等待`   
+#### [下载地址](https://github.com/Ahua9527/ALE2GBK-Converter/releases/)
