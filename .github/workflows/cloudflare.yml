@@ -1,4 +1,3 @@
-# .github/workflows/cloudflare.yml
 name: Deploy to Cloudflare Pages
 on:
   push:
