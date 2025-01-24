@@ -1,0 +1,10 @@
+{
+    "name": "ale-gbk-web",
+    "build": {
+      "command": "npm run build && npx @cloudflare/next-on-pages",
+      "directory": ".vercel/output/static"
+    },
+    "env": {
+      "NODE_VERSION": "20"
+    }
+  }
