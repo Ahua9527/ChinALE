@@ -10,10 +10,6 @@ npm run dev
 
 ## 部署到Cloudflare Pages
 
-# ALE-GBK Converter-Web
-
-[![Deploy to Cloudflare Pages](https://deploy.pages.dev/button.svg)](https://deploy.pages.dev/?url=https://github.com/Ahua9527/ALE2GBK-Converter)
-### 准备工作
 1. 登录Cloudflare Dashboard
 2. 在Pages页面创建新项目
 3. 获取API Token和Account ID：
