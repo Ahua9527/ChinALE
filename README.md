@@ -10,7 +10,6 @@ npm run dev
 
 ## 部署到Cloudflare Pages
 
-### 准备工作
 1. 登录Cloudflare Dashboard
 2. 在Pages页面创建新项目
 3. 获取API Token和Account ID：
