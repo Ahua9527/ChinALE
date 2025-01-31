@@ -12,13 +12,12 @@ export class ALEConverter {
       const buffer = await file.arrayBuffer();
       
       // 将UTF-8解码为字符串
-      const utf8Decoder = new TextDecoder('utf-8');
-      const text = utf8Decoder.decode(buffer);
+      const text = new TextDecoder('utf-8').decode(buffer);
       
       // 解析ALE文件结构
       const aleData = this.parseALEFile(text);
       
-      // 将数据转换为GBK编码
+      // 将数据转换为字符串
       const serializedText = this.serializeALEFile(aleData);
       
       // 使用iconv-lite进行GBK编码
@@ -81,11 +80,30 @@ export class ALEConverter {
       const text = new TextDecoder('utf-8').decode(buffer);
       const lines = text.split('\n').filter(line => line.trim() !== '');
       
-      // 基本格式验证
-      return lines.length >= 3 && 
-             lines[0].startsWith('FIELD_DELIM') && 
-             lines[1].split('\t').length > 1;
-    } catch {
+      console.log('Validating ALE file:', {
+        fileName: file.name,
+        fileSize: file.size,
+        firstLine: lines[0],
+        columnCount: lines[1]?.split('\t').length,
+        totalLines: lines.length
+      });
+
+      // 检查是否为 ALE 文件的基本结构
+      const isValidALE = 
+        lines.length >= 3 && 
+        (lines[0].startsWith('FIELD_DELIM') || lines[0].includes('Heading')) &&
+        lines[1].split('\t').length > 1;
+
+      console.log('Validation result:', {
+        isValidALE,
+        hasMinLines: lines.length >= 3,
+        hasValidHeader: lines[0].startsWith('FIELD_DELIM') || lines[0].includes('Heading'),
+        hasValidColumns: lines[1].split('\t').length > 1
+      });
+
+      return isValidALE;
+    } catch (error) {
+      console.error('ALE validation error:', error);
       return false;
     }
   }
