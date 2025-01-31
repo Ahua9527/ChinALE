@@ -233,7 +233,7 @@ const ALEUploader = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-center space-x-6">
             <a
-              href="https://github.com/Ahua9527/CineAlta-Flip"
+              href="https://github.com/Ahua9527/ChinALE"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-selected"
