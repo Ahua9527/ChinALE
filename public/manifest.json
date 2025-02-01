@@ -1,26 +1,53 @@
 {
+    "id": "/?source=pwa",
     "name": "ChinALE",
     "short_name": "ChinALE",
-    "description": "Unlock Chinese Metadata, Bridge AVID’s World.",
-    "start_url": "/",
+    "description": "Unlock Chinese Metadata, Bridge AVID World.",
+    "start_url": "/?source=pwa",
     "display": "standalone",
     "display_override": ["window-controls-overlay"],
+    "orientation": "any",
+    "scope": "/",
     "background_color": "#F1F1F1",
-    "theme_color": "#3366FF",
+    "theme_color": "#F1F1F1",
     "icons": [
       {
-        "src": "favicon-96x96.png",
-        "sizes": "96x96",
+        "src": "apple-touch-icon.png",
+        "sizes": "180x180",
         "type": "image/png"
       },
       {
-        "src": "pwa-192x192.png",
+        "src": "ChinALE_96_any.png",
+        "sizes": "96x96",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "ChinALE_192_any.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "ChinALE_512_any.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "ChinALE_96_maskable.png",
+        "sizes": "96x96",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "src": "ChinALE_192_maskable.png",
         "sizes": "192x192",
         "type": "image/png",
         "purpose": "maskable"
       },
       {
-        "src": "pwa-512x512.png",
+        "src": "ChinALE_512_maskable.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "maskable"
