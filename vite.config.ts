@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'favicon-96x96.png', 'apple-touch-icon.png', 'mask-icon.svg'],
+      includeAssets: ['favicon.ico', 'favicon-96x96.png', 'apple-touch-icon.png', 'favicon.svg'],
       manifest: {
         name: 'ChinALE',
         short_name: 'ChinALE',
@@ -24,23 +24,23 @@ export default defineConfig({
             sizes: '96x96',
             type: 'image/png'
           },
-          // {
-          //   src: 'apple-touch-icon.png',
-          //   sizes: '180x180',
-          //   type: 'image/png',
-          //   purpose: 'any'
-          // },
           {
-            src: 'pwa-192x192.png',
+            src: 'apple-touch-icon.png',
             sizes: '180x180',
             type: 'image/png',
             purpose: 'any'
           },
           {
+            src: 'pwa-192x192.png',
+            sizes: '180x180',
+            type: 'image/png',
+            purpose: 'maskable'
+          },
+          {
             src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'any'
+            purpose: 'maskable'
           }
         ]
       },
